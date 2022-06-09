@@ -2,7 +2,7 @@ import React from 'react';
 import './login.scss';
 
 const Login = () => {
-  return <div>wecode</div>;
+  return <div>이범석</div>;
 };
 
 export default Login;
