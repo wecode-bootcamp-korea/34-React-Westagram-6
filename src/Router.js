@@ -17,12 +17,12 @@ import Nav from './Nav';
 <BrowserRouter>
   <Routes>
     <Nav />
-    <Route path='/Login-beomseok' element={<LoginBeomSeok />} />
-    <Route path='/Main-beomseok' element={<MainBeomSeok />} />
-    <Route path='/Login-heeyun' element={<LoginHeeYun />} />
-    <Route path='/Main-heeyun' element={<MainHeeYun />} />
-    <Route path='/Login-hyerim' element={<LoginHyeRim />} />
-    <Route path='/Main-hyerim' element={<MainHyeRim />} />
+    <Route path="/Login-beomseok" element={<LoginBeomSeok />} />
+    <Route path="/Main-beomseok" element={<MainBeomSeok />} />
+    <Route path="/Login-heeyun" element={<LoginHeeYun />} />
+    <Route path="/Main-heeyun" element={<MainHeeYun />} />
+    <Route path="/Login-hyerim" element={<LoginHyeRim />} />
+    <Route path="/Main-hyerim" element={<MainHyeRim />} />
   </Routes>
 </BrowserRouter>;
 
