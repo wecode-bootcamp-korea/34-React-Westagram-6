@@ -1,21 +1,24 @@
-import React, {useState} from 'react';
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './login.scss';
 
 const Login = () => {
-  const navigate = useNavigate();
-  const goToMain = () => {
-    navigate("/Main");
-  };
+  const [id, setId] = useState('');
+  const [pw, setPw] = useState('');
+  const isValid = id.includes('@') && pw.length >= 5;
 
-  const [id, setId] = useState();
-  const [pw, setPw] = useState();
-
-  const handleInput = (e) =>{
+  const handleIdInput = e => {
     setId(e.target.value);
   };
 
-  const isValid = id.includes("@") && pw.length > 5;
+  const handlePwInput = e => {
+    setPw(e.target.value);
+  };
+
+  const navigate = useNavigate();
+  const goToMain = () => {
+    navigate('/Main');
+  };
 
   return (
     <>
@@ -26,10 +29,20 @@ const Login = () => {
             type="text"
             className="id"
             placeholder="전화번호, 사용자 이름 또는 이메일"
-            onChange={handleInput}
+            onChange={handleIdInput}
           />
-          <input type="password" className="password" placeholder="비밀번호" onChange={(e) => setPw(e.target.value)} />
-          <button type="button" className="btn" onClick={goToMain}>
+          <input
+            type="password"
+            className="password"
+            placeholder="비밀번호"
+            onChange={handlePwInput}
+          />
+          <button
+            type="button"
+            className="btn"
+            onClick={goToMain}
+            style={{ backgroundColor: isValid ? '#2a5682' : '#c4e0fc' }}
+          >
             로그인
           </button>
         </form>

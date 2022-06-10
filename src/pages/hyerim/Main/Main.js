@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import './main.scss';
 
 const Main = () => {
@@ -40,7 +40,7 @@ const Main = () => {
           <article className="feed_in">
             <div className="profile">
               <img
-                src="/images/profile2.jpg"
+                src="/images/hyerim/profile2.jpg"
                 alt="profile"
                 className="profileImg"
               />
@@ -50,7 +50,11 @@ const Main = () => {
             {/* {profile} */}
 
             <div className="feed_img">
-              <img src="/images/feed.jpg" alt="feed" className="feedImg" />
+              <img
+                src="/images/hyerim/feed.jpg"
+                alt="feed"
+                className="feedImg"
+              />
             </div>
             {/* {feed_img} */}
 
@@ -66,7 +70,11 @@ const Main = () => {
 
             <div className="feed_like">
               <div className="like_who">
-                <img src="/images/gong.jpg" alt="img" className="likeWhoImg" />
+                <img
+                  src="/images/hyerim/gong.jpg"
+                  alt="img"
+                  className="likeWhoImg"
+                />
                 <p>
                   <span className="name">gongyoo</span>님 외 10명이 좋아합니다
                 </p>
@@ -114,7 +122,7 @@ const Main = () => {
         <div className="main-right">
           <div className="right_profile">
             <img
-              src="/images/profile2.jpg"
+              src="/images/hyerim/profile2.jpg"
               alt="profile"
               className="rightProfileImg"
             />
@@ -136,7 +144,7 @@ const Main = () => {
             <ul className="story_list">
               <li className="storyList">
                 <img
-                  src="/images/profile.jpg"
+                  src="/images/hyerim/profile.jpg"
                   alt="profile1"
                   className="listImg"
                 />
@@ -148,7 +156,7 @@ const Main = () => {
               </li>
               <li className="storyList">
                 <img
-                  src="/images/story1.jpg"
+                  src="/images/hyerim/story1.jpg"
                   alt="profile1"
                   className="listImg"
                 />
@@ -160,7 +168,7 @@ const Main = () => {
               </li>
               <li className="storyList">
                 <img
-                  src="/images/story2.jpg"
+                  src="/images/hyerim/story2.jpg"
                   alt="profile1"
                   className="listImg"
                 />
@@ -172,7 +180,7 @@ const Main = () => {
               </li>
               <li className="storyList">
                 <img
-                  src="/images/profile.jpg"
+                  src="/images/hyerim/profile.jpg"
                   alt="profile1"
                   className="listImg"
                 />
@@ -196,7 +204,7 @@ const Main = () => {
             <div className="recommend_box">
               <p className="re_name">
                 <img
-                  src="/images/recommend.jpg"
+                  src="/images/hyerim/recommend.jpg"
                   alt="recommend"
                   className="reImg"
                 />
@@ -214,7 +222,7 @@ const Main = () => {
             <div className="recommend_box">
               <p className="re_name">
                 <img
-                  src="/images/recommend1.jpg"
+                  src="/images/hyerim/recommend1.jpg"
                   alt="recommend"
                   className="reImg"
                 />
@@ -231,7 +239,11 @@ const Main = () => {
             {/* {recommend_box} */}
             <div className="recommend_box">
               <p className="re_name">
-                <img src="/images/gong.jpg" alt="recommend" className="reImg" />
+                <img
+                  src="/images/hyerim/gong.jpg"
+                  alt="recommend"
+                  className="reImg"
+                />
                 gongyoo
                 <br />
                 <span className="recommendFollow">
