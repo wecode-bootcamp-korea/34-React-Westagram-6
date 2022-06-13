@@ -41,7 +41,7 @@ const Login = () => {
             type="button"
             className="btn"
             onClick={goToMain}
-            style={{ backgroundColor: isValid ? '#2a5682' : '#c4e0fc' }}
+            disabled={isValid ? false : true}
           >
             로그인
           </button>

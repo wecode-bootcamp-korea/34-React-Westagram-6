@@ -32,11 +32,14 @@
     .btn {
       height: 45px;
       color: #fff;
-      background-color: #c4e0fc;
+      background-color: #2a5682;
       border: none;
       border-radius: 5px;
       font-size: 18px;
       font-weight: bold;
+      &:disabled {
+        background-color: #c4e0fc;
+      }
     }
   }
   .forgetPw {
