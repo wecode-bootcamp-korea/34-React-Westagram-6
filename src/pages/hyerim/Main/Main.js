@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faComment } from '@fortawesome/free-regular-svg-icons';
+
 import './main.scss';
 
 const Main = () => {
+  const [userName, setUserName] = useState('wecode');
+  const [textIn, setTextIn] = useState([]);
+  const [commentBox, setCommentBox] = useState('');
+
   return (
     <div id="wrap">
       <nav className="nav">
@@ -48,7 +56,6 @@ const Main = () => {
               <i className="fa-solid fa-ellipsis" />
             </div>
             {/* {profile} */}
-
             <div className="feed_img">
               <img
                 src="/images/hyerim/feed.jpg"
@@ -60,9 +67,9 @@ const Main = () => {
 
             <div className="feed_icon">
               <div className="icon_l">
-                <i className="fa-solid fa-heart heart" />
-                <i className="fa-regular fa-comment comment" />
-                <i className="fa-solid fa-arrow-up-from-bracket arrow"></i>
+                <FontAwesomeIcon icon={faHeart} className="heart" />
+                <FontAwesomeIcon icon={faComment} className="comment" />
+                {/* <FontAwesomeIcon icon={faArrowUp} /> */}
               </div>
               <i className="fa-regular fa-bookmark bookmark" />
             </div>
@@ -86,32 +93,55 @@ const Main = () => {
                 </p>
               </div>
               {/* {like_me} */}
-              <div className="comment_add">
-                <div className="comment_addBoxtitle">
-                  <p>
-                    <span className="name">wecode</span>맛있겠다!
-                  </p>
-                  <i className="fa-regular fa-heart like_heart" />
-                </div>
-                {/* {comment_addBoxtitle} */}
-              </div>
+              <ul className="comment_add">
+                <li>
+                  <span className="name">wecode</span>맛있겠다!
+                  {/* <i className="fa-regular fa-heart like_heart" /> */}
+                  <FontAwesomeIcon icon={faHeart} className="likeHeart" />
+                </li>
+
+                {textIn.map(function (a, i) {
+                  return (
+                    <>
+                      <li>
+                        <span className="name">wecode</span>
+                        {textIn[i]}
+                      </li>
+                    </>
+                  );
+                })}
+
+                {/* <li>{textIn}</li> */}
+              </ul>
+              {/* {comment_add} */}
               <div className="feed_time">30분 전</div>
               {/* {comment_add} */}
             </div>
             {/* {feed_like} */}
             <div className="feed_comment">
-              <ul className="comment_box">
-                <li>
+              <form className="comment_box">
+                <div>
                   <input
                     type="text"
                     className="comment_in"
                     placeholder="댓글 달기..."
+                    onChange={e => {
+                      setCommentBox(e.target.value);
+                    }}
                   />
-                </li>
-              </ul>
-              <button type="button" className="btn">
-                게시
-              </button>
+                </div>
+                <button
+                  type="button"
+                  className="btn"
+                  onClick={() => {
+                    let copy = [...textIn];
+                    copy.push(commentBox);
+                    setTextIn(copy);
+                  }}
+                >
+                  게시
+                </button>
+              </form>
             </div>
             {/* {feed_comment} */}
           </article>
@@ -151,7 +181,7 @@ const Main = () => {
                 <p className="listName">
                   _yum_s
                   <br />
-                  <span class="listTime">16분 전</span>
+                  <span className="listTime">16분 전</span>
                 </p>
               </li>
               <li className="storyList">
@@ -163,7 +193,7 @@ const Main = () => {
                 <p className="listName">
                   mozzi_sson
                   <br />
-                  <span class="listTime">3시간 전</span>
+                  <span className="listTime">3시간 전</span>
                 </p>
               </li>
               <li className="storyList">
@@ -175,7 +205,7 @@ const Main = () => {
                 <p className="listName">
                   jjung_irang
                   <br />
-                  <span class="listTime">20시간 전</span>
+                  <span className="listTime">20시간 전</span>
                 </p>
               </li>
               <li className="storyList">
@@ -187,7 +217,7 @@ const Main = () => {
                 <p className="listName">
                   woooo
                   <br />
-                  <span class="listTime">하루 전</span>
+                  <span className="listTime">하루 전</span>
                 </p>
               </li>
             </ul>

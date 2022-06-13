@@ -135,21 +135,28 @@
               border: 1px solid #e6e6e6;
             }
           }
-          .comment_addBoxtitle {
+          .comment_add {
             display: flex;
             justify-content: space-between;
+            flex-direction: column;
+            height: auto;
 
-            .comment_add {
-              .like_heart {
-                color: #ccc;
-                padding-right: 20px;
-              }
-              .name {
-                margin-right: 12px;
-                font-weight: bold;
-              }
+            // .comment_addBoxtitle {
+            //   display: flex;
+            //   justify-content: space-between;
+            //   flex-direction: column;
+            //   height: auto;
+
+            .likeHeart {
+              color: #ccc;
+              padding-right: 20px;
+            }
+            .name {
+              margin-right: 12px;
+              font-weight: bold;
             }
           }
+
           .feed_time {
             margin-top: 10px;
             color: #ccc;
