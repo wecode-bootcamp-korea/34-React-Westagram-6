@@ -1,0 +1,223 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+
+  .navi {
+    display: flex;
+    justify-content: space-around;
+    height: 80px;
+    width: 1400px;
+    align-items: center;
+    margin: 0 150px;
+
+    .navLeft {
+      display: flex;
+
+      .navIcons {
+        height: 30px;
+        width: 30px;
+      }
+
+      .logo {
+        height: 30px;
+        font-family: 'Lobster', cursive;
+        border-left: 1px solid rgb(180, 180, 180);
+        font-size: 30px;
+        margin-left: 20px;
+        padding-left: 20px;
+      }
+    }
+  }
+  .mains {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fafafa;
+
+    .feeds {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      margin-right: 20px;
+      width: 500px;
+
+      .articles {
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+        border: 2px solid rgb(180, 180, 180);
+
+        .articleTop {
+          display: flex;
+          align-items: center;
+
+          .computer {
+            height: 50px;
+            width: 50px;
+            border-radius: 100%;
+            margin-left: 3px;
+          }
+        }
+
+        .fighting {
+          width: 496px;
+          height: 600px;
+          object-fit: cover;
+        }
+
+        .articleIcons {
+          display: flex;
+          justify-content: space-between;
+
+          .articleIcon {
+            height: 30px;
+            width: 30px;
+          }
+        }
+
+        .comments {
+          display: flex;
+          justify-content: space-between;
+          border-top: 1px solid rgb(180, 180, 180);
+          margin-top: 20px;
+
+          .comment {
+            width: 440px;
+            height: 30px;
+            border: none;
+          }
+
+          .open {
+            height: 30px;
+            width: 50px;
+          }
+        }
+      }
+    }
+
+    .mainRight {
+      width: 400px;
+      height: 700px;
+
+      .mainRightTop {
+        display: flex;
+        align-items: center;
+        margin: 15px;
+
+        .mainRightComputer {
+          height: 60px;
+          width: 60px;
+          border-radius: 100%;
+        }
+      }
+
+      .story {
+        width: 400px;
+        height: 300px;
+        padding: 20px;
+        border: 2px solid #dbdbdb;
+        border-radius: 10px;
+
+        .storyWrite {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 10px;
+        }
+
+        .storyPeople {
+          display: flex;
+          flex-direction: column;
+
+          .storyPerson {
+            display: flex;
+            line-height: 30px;
+
+            .iuPhoto {
+              height: 40px;
+              width: 40px;
+              border-radius: 100%;
+              margin-right: 10px;
+            }
+            .storyName {
+              display: flex;
+              flex-direction: column;
+            }
+          }
+        }
+      }
+
+      .recommend {
+        width: 400px;
+        height: 300px;
+        padding: 20px;
+        border: 2px solid #dbdbdb;
+        border-radius: 10px;
+
+        .recommendWrite {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 10px;
+        }
+
+        .recommendPeople {
+          display: flex;
+          flex-direction: column;
+
+          .recommendPerson {
+            display: flex;
+            line-height: 30px;
+
+            .recommendIuPhoto {
+              height: 40px;
+              width: 40px;
+              border-radius: 100%;
+              margin-right: 10px;
+            }
+            .recommendName {
+              display: flex;
+              flex-direction: column;
+            }
+          }
+        }
+
+        // .recommend {
+        //   width: 400px;
+        //   height: 300px;
+        //   padding: 20px;
+        //   border: 2px solid #dbdbdb;
+        //   border-radius: 10px;
+        //   margin-top: 10px;
+
+        //   .recommendWrite {
+        //     display: flex;
+        //     justify-content: space-between;
+        //   }
+
+        //   .recommendPeople {
+        //     display: flex;
+        //     flex-direction: column;
+        //     justify-content: space-around;
+
+        //     .recommendPerson {
+        //       display: flex;
+        //       line-height: 30px;
+
+        //       .recommendIuPhoto {
+        //         height: 40px;
+        //         width: 40px;
+        //         border-radius: 100%;
+        //         margin-right: 10px;
+        //       }
+        //       .recommendName {
+        //         display: flex;
+        //         flex-direction: column;
+        //       }
+        //     }
+        .grey {
+          color: #dbdbdb;
+        }
+      }
+    }
+  }
+}
