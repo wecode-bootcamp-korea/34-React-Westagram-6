@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './main.scss';
 
 const Main = () => {
   const [textIn, setTextIn] = useState([]);
   const [commentBox, setCommentBox] = useState('');
+  // const [array, setArray] = useState([]);
 
   return (
     <div id="wrap">
@@ -63,7 +64,7 @@ const Main = () => {
               <div className="icon_l">
                 <svg
                   aria-label="좋아요"
-                  class="_ab6-"
+                  className="_ab6-"
                   color="#262626"
                   fill="#262626"
                   height="24"
@@ -75,7 +76,7 @@ const Main = () => {
                 </svg>
                 <svg
                   aria-label="댓글 달기"
-                  class="_ab6-"
+                  className="_ab6-"
                   color="#262626"
                   fill="#262626"
                   height="24"
@@ -93,7 +94,7 @@ const Main = () => {
                 </svg>
                 <svg
                   aria-label="게시물 공유"
-                  class="_ab6-"
+                  className="_ab6-"
                   color="#262626"
                   fill="#262626"
                   height="24"
@@ -119,11 +120,10 @@ const Main = () => {
                     stroke-width="2"
                   />
                 </svg>
-                {/* <FontAwesomeIcon icon={faArrowUp} /> */}
               </div>
               <svg
                 aria-label="저장"
-                class="_ab6-"
+                className="_ab6-"
                 color="#262626"
                 fill="#262626"
                 height="24"
@@ -160,14 +160,21 @@ const Main = () => {
                   <span className="name">w_oo_o_</span> #행궁동 #EEEm
                 </p>
               </div>
+
               {/* {like_me} */}
               <ul className="comment_add">
                 <li>
                   <span className="name">wecode</span>맛있겠다!
-                  {/* <i className="fa-regular fa-heart like_heart" /> */}
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Emoji_u2665.svg/768px-Emoji_u2665.svg.png"
+                    className="commentHeart"
+                  ></img>
                 </li>
+                {textIn.map(ele => {
+                  return <Comment text={ele} />;
+                })}
 
-                {textIn.map(function (a, i) {
+                {/* {textIn.map(function (a, i) {
                   return (
                     <>
                       <li>
@@ -176,9 +183,7 @@ const Main = () => {
                       </li>
                     </>
                   );
-                })}
-
-                {/* <li>{textIn}</li> */}
+                })} */}
               </ul>
               {/* {comment_add} */}
               <div className="feed_time">30분 전</div>
@@ -193,6 +198,8 @@ const Main = () => {
                   let copy = [...textIn];
                   copy.push(commentBox);
                   setTextIn(copy);
+                  console.log(textIn);
+                  e.target.reset();
                 }}
               >
                 <div>
@@ -205,9 +212,7 @@ const Main = () => {
                     }}
                   />
                 </div>
-                <button type="button" className="btn">
-                  게시
-                </button>
+                <button className="btn">게시</button>
               </form>
             </div>
             {/* {feed_comment} */}
@@ -392,6 +397,21 @@ const Main = () => {
         {/* main-right */}
       </section>
     </div>
+  );
+};
+
+const Comment = props => {
+  // const { textIn } = props;
+
+  return (
+    <li>
+      <span className="name">wecode</span>
+      {props.text}
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Emoji_u2665.svg/768px-Emoji_u2665.svg.png"
+        className="commentHeart"
+      ></img>
+    </li>
   );
 };
 

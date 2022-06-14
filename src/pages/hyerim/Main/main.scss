@@ -138,6 +138,7 @@
             display: flex;
             justify-content: space-between;
             flex-direction: column;
+            position: relative;
             height: auto;
 
             // .comment_addBoxtitle {
@@ -153,6 +154,12 @@
             .name {
               margin-right: 12px;
               font-weight: bold;
+            }
+            .commentHeart {
+              position: absolute;
+              right: 10px;
+              width: 15px;
+              height: 15px;
             }
           }
 

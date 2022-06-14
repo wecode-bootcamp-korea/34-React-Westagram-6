@@ -24,7 +24,7 @@ const Login = () => {
     <>
       <div id="login_box">
         <h1 className="logo">westagram</h1>
-        <form class="input_box">
+        <form className="input_box">
           <input
             type="text"
             className="id"
