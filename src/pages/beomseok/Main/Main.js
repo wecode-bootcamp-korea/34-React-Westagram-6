@@ -8,8 +8,6 @@ const Main = () => {
   const [input, setInput] = useState('');
   const [comment, setComment] = useState([]);
 
-  // const changeHeartColor = () => {};
-
   return (
     <div className="mainDiv">
       <nav className="nav-bar">
@@ -85,26 +83,6 @@ const Main = () => {
                     key={i}
                     setComment={setComment}
                   />
-                  // <li className="commentBox">
-                  //   <span className="userId">beom__q</span>
-                  //   <li className="commentInput">{comment[i]}</li>
-                  //   <img
-                  //     src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
-                  //     alt="heart"
-                  //     className="heart"
-                  //     onClick={changeHeartColor}
-                  //   />
-                  //   <button
-                  //     className="deleteBtn"
-                  //     onClick={() => {
-                  //       let copy = [...comment];
-                  //       copy.splice(i, 1);
-                  //       setComment(copy);
-                  //     }}
-                  //   >
-                  //     삭제
-                  //   </button>
-                  // </li>
                 );
               })}
             </ul>
@@ -251,16 +229,6 @@ const CommentCreate = (props, i) => {
     <li className="commentBox">
       <span className="userId">beom__q</span>
       <li>{comment}</li>
-      {/* <button
-        className="deleteBtn"
-        onClick={() => {
-          let copy = [...comment];
-          copy.splice(i, 1);
-          setComment(copy);
-        }}
-      >
-        삭제
-      </button> */}
     </li>
   );
 };
