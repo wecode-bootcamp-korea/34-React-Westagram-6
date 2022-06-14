@@ -13,14 +13,14 @@ const Login = () => {
   const goToMain = () => {
     navigate('/Main-beomseok');
   };
-  const changeColor = id.includes('@') && pw.length >= 5;
+  const changeColor = id.includes('@') && pw.length >= 5 ? false : true;
 
   return (
     <div className="centerbox">
       <div className="logo">
         <a href="login.html">westagram</a>
       </div>
-      <form id="login">
+      <form id="login" onSubmit={goToMain}>
         <input
           className="box inputId"
           type="text"
@@ -33,12 +33,7 @@ const Login = () => {
           placeholder="비밀번호"
           onChange={e => setPw(e.target.value)}
         />
-        <button
-          type="button"
-          className="box btn"
-          disabled={changeColor ? false : true}
-          onClick={goToMain}
-        >
+        <button type="submit" className="box btn" disabled={changeColor}>
           로그인
         </button>
       </form>

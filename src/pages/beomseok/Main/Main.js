@@ -5,6 +5,11 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 const Main = () => {
+  const [input, setInput] = useState('');
+  const [comment, setComment] = useState([]);
+
+  // const changeHeartColor = () => {};
+
   return (
     <div className="mainDiv">
       <nav className="nav-bar">
@@ -43,7 +48,7 @@ const Main = () => {
                 />
                 <div>
                   <p>
-                    <strong>beom_q</strong>
+                    <strong>beom__q</strong>
                   </p>
                   <p>호이안</p>
                 </div>
@@ -71,16 +76,56 @@ const Main = () => {
               <img src="/images/beomseok/3.jpeg" alt="" />
               <p>mingming_214님 외 5명이 좋아합니다</p>
             </div>
-            <div></div>
-            <div></div>
+
             <ul className="chatUl">
-              <li>
-                <span>text</span>
-              </li>
+              {comment.map(function (props, i) {
+                return (
+                  <CommentCreate
+                    comment={comment[i]}
+                    key={i}
+                    setComment={setComment}
+                  />
+                  // <li className="commentBox">
+                  //   <span className="userId">beom__q</span>
+                  //   <li className="commentInput">{comment[i]}</li>
+                  //   <img
+                  //     src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
+                  //     alt="heart"
+                  //     className="heart"
+                  //     onClick={changeHeartColor}
+                  //   />
+                  //   <button
+                  //     className="deleteBtn"
+                  //     onClick={() => {
+                  //       let copy = [...comment];
+                  //       copy.splice(i, 1);
+                  //       setComment(copy);
+                  //     }}
+                  //   >
+                  //     삭제
+                  //   </button>
+                  // </li>
+                );
+              })}
             </ul>
-            <form className="chat">
-              <input type="text" placeholder="댓글 달기..." />
-              <button>게시</button>
+            <form
+              className="chat"
+              onSubmit={e => {
+                e.preventDefault();
+                let copy = [...comment];
+                copy.push(input);
+                setComment(copy);
+                e.target.reset();
+              }}
+            >
+              <input
+                type="text"
+                placeholder="댓글 달기..."
+                onChange={e => {
+                  setInput(e.target.value);
+                }}
+              />
+              <button type="submit">게시</button>
             </form>
           </article>
         </div>
@@ -90,10 +135,9 @@ const Main = () => {
               <div className="profile-img">
                 <img src="/images/beomseok/2.jpeg" alt="profile" />
                 <div>
-                  <p>
-                    <strong>beom_q</strong>
+                  <p className="userInfo">
+                    <strong>beom__q</strong>
                   </p>
-                  <p>호이안</p>
                 </div>
               </div>
             </div>
@@ -108,7 +152,7 @@ const Main = () => {
                 <img src="/images/beomseok/2.jpeg" alt="profile" />
                 <div>
                   <p>
-                    <strong>beom_q</strong>
+                    <strong>beom__q</strong>
                   </p>
                   <p>16분전</p>
                 </div>
@@ -119,7 +163,7 @@ const Main = () => {
                 <img src="/images/beomseok/2.jpeg" alt="profile" />
                 <div>
                   <p>
-                    <strong>beom_q</strong>
+                    <strong>beom__q</strong>
                   </p>
                   <p>3시간전</p>
                 </div>
@@ -130,7 +174,7 @@ const Main = () => {
                 <img src="/images/beomseok/2.jpeg" alt="profile" />
                 <div>
                   <p>
-                    <strong>beom_q</strong>
+                    <strong>beom__q</strong>
                   </p>
                   <p>2시간전</p>
                 </div>
@@ -141,7 +185,7 @@ const Main = () => {
                 <img src="/images/beomseok/2.jpeg" alt="profile" />
                 <div>
                   <p>
-                    <strong>beom_q</strong>
+                    <strong>beom__q</strong>
                   </p>
                   <p>4시간전</p>
                 </div>
@@ -158,7 +202,7 @@ const Main = () => {
                 <img src="/images/beomseok/2.jpeg" alt="profile" />
                 <div className="follow">
                   <p>
-                    <strong>beom_q</strong>
+                    <strong>beom__q</strong>
                   </p>
                   <p>mingming_214님외 함께아는 친구가 10명입니다</p>
                 </div>
@@ -170,7 +214,7 @@ const Main = () => {
                 <img src="/images/beomseok/2.jpeg" alt="profile" />
                 <div className="follow">
                   <p>
-                    <strong>beom_q</strong>
+                    <strong>beom__q</strong>
                   </p>
                   <p>mingming_214님외 함께아는 친구가 10명입니다</p>
                 </div>
@@ -182,7 +226,7 @@ const Main = () => {
                 <img src="/images/beomseok/2.jpeg" alt="profile" />
                 <div className="follow">
                   <p>
-                    <strong>beom_q</strong>
+                    <strong>beom__q</strong>
                   </p>
                   <p>mingming_214님외 함께아는 친구가 10명입니다</p>
                 </div>
@@ -198,6 +242,26 @@ const Main = () => {
         </div>
       </main>
     </div>
+  );
+};
+
+const CommentCreate = (props, i) => {
+  const { comment, setComment } = props;
+  return (
+    <li className="commentBox">
+      <span className="userId">beom__q</span>
+      <li>{comment}</li>
+      {/* <button
+        className="deleteBtn"
+        onClick={() => {
+          let copy = [...comment];
+          copy.splice(i, 1);
+          setComment(copy);
+        }}
+      >
+        삭제
+      </button> */}
+    </li>
   );
 };
 export default Main;

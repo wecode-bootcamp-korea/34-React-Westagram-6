@@ -31,11 +31,10 @@ span {
 .arti {
   width: 500px;
   margin: 10px auto;
+  border: 1px solid black;
 }
 .arti img {
-  margin-left: 10px;
-
-  width: 480px;
+  width: 500px;
 }
 .more {
   position: absolute;
@@ -108,6 +107,7 @@ span {
   width: 420px;
   height: 30px;
   border: none;
+  outline: none;
 }
 .chat button {
   background-color: white;
@@ -159,4 +159,41 @@ li {
   position: absolute;
   right: 20px;
   color: #0095f6;
+}
+
+.commentBox {
+  display: flex;
+  position: relative;
+  margin-bottom: 5px;
+  align-items: center;
+
+  .deleteBtn {
+    position: absolute;
+    right: 40px;
+    border: none;
+    background-color: beige;
+    color: black;
+  }
+  .userId {
+    font-weight: bold;
+  }
+  .commentInput {
+    position: absolute;
+    left: 65px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  .heart {
+    position: absolute;
+    right: 80px;
+    width: 17px;
+    height: 17px;
+    &active {
+      color: red;
+    }
+  }
+}
+.userInfo {
+  align-items: center;
 }
