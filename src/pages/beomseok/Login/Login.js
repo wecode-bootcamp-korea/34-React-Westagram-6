@@ -2,18 +2,27 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import './login.scss';
-// import '../../styles/common.scss';
 
 const Login = () => {
   const navigate = useNavigate();
-  // const [button, setButton] = useState(true);
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
 
   const goToMain = () => {
     navigate('/Main-beomseok');
+    fetch('http://172.20.10.3:8000/users/signin', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: id,
+        password: pw,
+      }),
+    })
+      .then(response => response.json())
+      .then(result =>
+        localStorage.setItem('access_token', result.access_token)
+      );
   };
-  const changeColor = id.includes('@') && pw.length >= 5 ? false : true;
+  const changeColor = id.includes('@') && pw.length >= 5;
 
   return (
     <div className="centerbox">
@@ -33,7 +42,7 @@ const Login = () => {
           placeholder="비밀번호"
           onChange={e => setPw(e.target.value)}
         />
-        <button type="submit" className="box btn" disabled={changeColor}>
+        <button type="submit" className="box btn" disabled={!changeColor}>
           로그인
         </button>
       </form>
