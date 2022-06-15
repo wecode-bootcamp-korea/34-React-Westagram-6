@@ -3,9 +3,35 @@ import './login.scss';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const [id, setId] = useState('');
   const [password, setPw] = useState('');
-  // const [disabled, setDisabled] = useState(true);
+  const [id, setId] = useState('');
+
+  const server = e => {
+    e.preventDefault();
+    fetch('http://10.58.6.173:8000/users/signin', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: id,
+        password: password,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => {
+        if (result.access_token) {
+          localStorage.setItem('token', result.access_token);
+          goToMain();
+        } else {
+          alert('회원정보가 잘못되었습니다');
+        }
+      });
+  };
+
+  // onSubmit={event => {
+  //   event.preventDefault();
+  //   goToMain();
+  // }}
+
+  // const [disabled, setDisabled] = useState('');
 
   const navigate = useNavigate();
 
@@ -28,12 +54,7 @@ const Login = () => {
       <div className="container">
         <div className="top">
           <h2>Westagram</h2>
-          <form
-            onSubmit={event => {
-              event.preventDefault();
-              goToMain();
-            }}
-          >
+          <form>
             <div className="inputbox">
               <input
                 className="idInput"
@@ -50,6 +71,8 @@ const Login = () => {
             </div>
             <button
               className={valid ? 'loginAbled' : 'loginDisabled'}
+              onClick={server}
+
               // disabled={disabled}
             >
               로그인
