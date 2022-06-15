@@ -1,0 +1,196 @@
+.navi {
+  display: flex;
+  justify-content: space-around;
+  width: 1400px;
+  height: 80px;
+  align-items: center;
+  margin: 0 150px;
+
+  .navLeft {
+    display: flex;
+
+    .navIcons {
+      width: 30px;
+      height: 30px;
+    }
+
+    .logo {
+      height: 30px;
+      font-family: 'Lobster', cursive;
+      border-left: 1px solid rgb(180, 180, 180);
+      font-size: 30px;
+      margin-left: 20px;
+      padding-left: 20px;
+    }
+  }
+  .navIconsRight {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.mains {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: #fafafa;
+
+  .feeds {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 500px;
+    margin-right: 20px;
+
+    .articles {
+      display: flex;
+      flex-direction: column;
+      margin-top: 30px;
+      border: 2px solid rgb(180, 180, 180);
+
+      .articleTop {
+        display: flex;
+        align-items: center;
+
+        .computer {
+          width: 50px;
+          height: 50px;
+          margin-left: 3px;
+          border-radius: 100%;
+        }
+      }
+
+      .fighting {
+        width: 496px;
+        height: 600px;
+        object-fit: cover;
+      }
+
+      .articleIcons {
+        display: flex;
+        justify-content: space-between;
+
+        .articleIcon {
+          width: 30px;
+          height: 30px;
+        }
+      }
+
+      .comments {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        border-top: 1px solid rgb(180, 180, 180);
+
+        .comment {
+          width: 440px;
+          height: 30px;
+          border: none;
+        }
+
+        .open {
+          width: 50px;
+          height: 30px;
+        }
+      }
+    }
+  }
+
+  .mainRight {
+    width: 400px;
+    height: 700px;
+
+    .mainRightTop {
+      display: flex;
+      align-items: center;
+      margin: 15px;
+
+      .mainRightComputer {
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+      }
+    }
+
+    .story {
+      width: 400px;
+      height: 300px;
+      padding: 20px;
+      border: 2px solid #dbdbdb;
+      border-radius: 10px;
+
+      .storyWrite {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+
+      .storyPeople {
+        display: flex;
+        flex-direction: column;
+
+        .storyPerson {
+          display: flex;
+          line-height: 30px;
+
+          .iuPhoto {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 100%;
+          }
+
+          .storyName {
+            display: flex;
+            flex-direction: column;
+
+            .storyGrey {
+              color: #dbdbdb;
+            }
+          }
+        }
+      }
+    }
+
+    .recommend {
+      width: 400px;
+      height: 300px;
+      padding: 20px;
+      border: 2px solid #dbdbdb;
+      border-radius: 10px;
+
+      .recommendWrite {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+
+      .recommendPeople {
+        display: flex;
+        flex-direction: column;
+
+        .recommendPerson {
+          display: flex;
+          line-height: 30px;
+
+          .recommendIuPhoto {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 100%;
+          }
+
+          .recommendName {
+            display: flex;
+            flex-direction: column;
+
+            .grey {
+              color: #dbdbdb;
+            }
+          }
+        }
+      }
+    }
+  }
+}

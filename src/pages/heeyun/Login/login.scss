@@ -1,0 +1,79 @@
+.loginWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ededed;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 500px;
+    height: 600px;
+    border: 1px solid rgb(180, 180, 180);
+    background-color: white;
+
+    .top {
+      width: 400px;
+      height: 400px;
+      margin: 40px auto;
+
+      h2 {
+        margin-bottom: 45px;
+        font-family: 'Lobster', cursive;
+        font-size: 70px;
+        text-align: center;
+      }
+
+      .inputbox {
+        display: flex;
+        flex-direction: column;
+        margin: 30px 0;
+
+        .idInput {
+          width: 400px;
+          height: 50px;
+          margin-bottom: 10px;
+          border: 2px solid #cfd7de;
+          border-radius: 5px;
+          background-color: #f5f8fa;
+        }
+      }
+
+      .loginAbled {
+        width: 400px;
+        height: 40px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(0, 149, 246);
+        color: white;
+        font-size: 20px;
+      }
+
+      .loginDisabled {
+        width: 400px;
+        height: 40px;
+        border: none;
+        border-radius: 5px;
+        background-color: tomato;
+        color: white;
+        font-size: 20px;
+      }
+    }
+
+    .bottom {
+      display: flex;
+      justify-content: center;
+      width: 400px;
+      height: 100px;
+      margin: 0 auto;
+
+      span {
+        padding-top: 50px;
+        color: #41648c;
+        text-decoration: none;
+      }
+    }
+  }
+}
