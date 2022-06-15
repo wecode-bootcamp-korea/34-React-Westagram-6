@@ -1,221 +1,194 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
+.navi {
+  display: flex;
+  justify-content: space-around;
+  width: 1400px;
+  height: 80px;
+  align-items: center;
+  margin: 0 150px;
 
-  .navi {
+  .navLeft {
     display: flex;
-    justify-content: space-around;
-    height: 80px;
-    width: 1400px;
-    align-items: center;
-    margin: 0 150px;
 
-    .navLeft {
-      display: flex;
+    .navIcons {
+      width: 30px;
+      height: 30px;
+    }
 
-      .navIcons {
-        height: 30px;
-        width: 30px;
-      }
-
-      .logo {
-        height: 30px;
-        font-family: 'Lobster', cursive;
-        border-left: 1px solid rgb(180, 180, 180);
-        font-size: 30px;
-        margin-left: 20px;
-        padding-left: 20px;
-      }
+    .logo {
+      height: 30px;
+      font-family: 'Lobster', cursive;
+      border-left: 1px solid rgb(180, 180, 180);
+      font-size: 30px;
+      margin-left: 20px;
+      padding-left: 20px;
     }
   }
-  .mains {
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fafafa;
+  .navIconsRight {
+    width: 30px;
+    height: 30px;
+  }
+}
 
-    .feeds {
+.mains {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: #fafafa;
+
+  .feeds {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 500px;
+    margin-right: 20px;
+
+    .articles {
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
-      margin-right: 20px;
-      width: 500px;
+      margin-top: 30px;
+      border: 2px solid rgb(180, 180, 180);
 
-      .articles {
-        display: flex;
-        flex-direction: column;
-        margin-top: 30px;
-        border: 2px solid rgb(180, 180, 180);
-
-        .articleTop {
-          display: flex;
-          align-items: center;
-
-          .computer {
-            height: 50px;
-            width: 50px;
-            border-radius: 100%;
-            margin-left: 3px;
-          }
-        }
-
-        .fighting {
-          width: 496px;
-          height: 600px;
-          object-fit: cover;
-        }
-
-        .articleIcons {
-          display: flex;
-          justify-content: space-between;
-
-          .articleIcon {
-            height: 30px;
-            width: 30px;
-          }
-        }
-
-        .comments {
-          display: flex;
-          justify-content: space-between;
-          border-top: 1px solid rgb(180, 180, 180);
-          margin-top: 20px;
-
-          .comment {
-            width: 440px;
-            height: 30px;
-            border: none;
-          }
-
-          .open {
-            height: 30px;
-            width: 50px;
-          }
-        }
-      }
-    }
-
-    .mainRight {
-      width: 400px;
-      height: 700px;
-
-      .mainRightTop {
+      .articleTop {
         display: flex;
         align-items: center;
-        margin: 15px;
 
-        .mainRightComputer {
-          height: 60px;
-          width: 60px;
+        .computer {
+          width: 50px;
+          height: 50px;
+          margin-left: 3px;
           border-radius: 100%;
         }
       }
 
-      .story {
-        width: 400px;
-        height: 300px;
-        padding: 20px;
-        border: 2px solid #dbdbdb;
-        border-radius: 10px;
+      .fighting {
+        width: 496px;
+        height: 600px;
+        object-fit: cover;
+      }
 
-        .storyWrite {
-          display: flex;
-          justify-content: space-between;
-          margin-bottom: 10px;
+      .articleIcons {
+        display: flex;
+        justify-content: space-between;
+
+        .articleIcon {
+          width: 30px;
+          height: 30px;
+        }
+      }
+
+      .comments {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        border-top: 1px solid rgb(180, 180, 180);
+
+        .comment {
+          width: 440px;
+          height: 30px;
+          border: none;
         }
 
-        .storyPeople {
+        .open {
+          width: 50px;
+          height: 30px;
+        }
+      }
+    }
+  }
+
+  .mainRight {
+    width: 400px;
+    height: 700px;
+
+    .mainRightTop {
+      display: flex;
+      align-items: center;
+      margin: 15px;
+
+      .mainRightComputer {
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+      }
+    }
+
+    .story {
+      width: 400px;
+      height: 300px;
+      padding: 20px;
+      border: 2px solid #dbdbdb;
+      border-radius: 10px;
+
+      .storyWrite {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+
+      .storyPeople {
+        display: flex;
+        flex-direction: column;
+
+        .storyPerson {
           display: flex;
-          flex-direction: column;
+          line-height: 30px;
 
-          .storyPerson {
+          .iuPhoto {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 100%;
+          }
+
+          .storyName {
             display: flex;
-            line-height: 30px;
+            flex-direction: column;
 
-            .iuPhoto {
-              height: 40px;
-              width: 40px;
-              border-radius: 100%;
-              margin-right: 10px;
-            }
-            .storyName {
-              display: flex;
-              flex-direction: column;
+            .storyGrey {
+              color: #dbdbdb;
             }
           }
         }
       }
+    }
 
-      .recommend {
-        width: 400px;
-        height: 300px;
-        padding: 20px;
-        border: 2px solid #dbdbdb;
-        border-radius: 10px;
+    .recommend {
+      width: 400px;
+      height: 300px;
+      padding: 20px;
+      border: 2px solid #dbdbdb;
+      border-radius: 10px;
 
-        .recommendWrite {
+      .recommendWrite {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+
+      .recommendPeople {
+        display: flex;
+        flex-direction: column;
+
+        .recommendPerson {
           display: flex;
-          justify-content: space-between;
-          margin-bottom: 10px;
-        }
+          line-height: 30px;
 
-        .recommendPeople {
-          display: flex;
-          flex-direction: column;
+          .recommendIuPhoto {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 100%;
+          }
 
-          .recommendPerson {
+          .recommendName {
             display: flex;
-            line-height: 30px;
+            flex-direction: column;
 
-            .recommendIuPhoto {
-              height: 40px;
-              width: 40px;
-              border-radius: 100%;
-              margin-right: 10px;
-            }
-            .recommendName {
-              display: flex;
-              flex-direction: column;
+            .grey {
+              color: #dbdbdb;
             }
           }
-        }
-
-        // .recommend {
-        //   width: 400px;
-        //   height: 300px;
-        //   padding: 20px;
-        //   border: 2px solid #dbdbdb;
-        //   border-radius: 10px;
-        //   margin-top: 10px;
-
-        //   .recommendWrite {
-        //     display: flex;
-        //     justify-content: space-between;
-        //   }
-
-        //   .recommendPeople {
-        //     display: flex;
-        //     flex-direction: column;
-        //     justify-content: space-around;
-
-        //     .recommendPerson {
-        //       display: flex;
-        //       line-height: 30px;
-
-        //       .recommendIuPhoto {
-        //         height: 40px;
-        //         width: 40px;
-        //         border-radius: 100%;
-        //         margin-right: 10px;
-        //       }
-        //       .recommendName {
-        //         display: flex;
-        //         flex-direction: column;
-        //       }
-        //     }
-        .grey {
-          color: #dbdbdb;
         }
       }
     }

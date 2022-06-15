@@ -16,17 +16,17 @@ const Main = () => {
         <input type="text" placeholder="검색" />
         <div className="navRight">
           <img
-            className="naviIcons"
+            className="navIconsRight"
             src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
             alt="navInstalogo"
           />
           <img
-            className="naviIcons"
+            className="navIconsRight"
             src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
             alt="navIcon2"
           />
           <img
-            className="naviIcons"
+            className="navIconsRight"
             src=" https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
             alt="navIcon3"
           />
@@ -115,7 +115,7 @@ const Main = () => {
                 />
                 <div className="storyName">
                   <span>dlwlrma</span>
-                  <span className="grey">2시간전</span>
+                  <span className="storyGrey">2시간전</span>
                 </div>
               </div>
               <div className="storyPerson">
@@ -126,7 +126,7 @@ const Main = () => {
                 />
                 <div className="storyName">
                   <span>dlwlrma</span>
-                  <span className="grey">2시간전</span>
+                  <span className="storyGrey">2시간전</span>
                 </div>
               </div>
               <div className="storyPerson">
@@ -137,7 +137,7 @@ const Main = () => {
                 />
                 <div className="storyName">
                   <span>dlwlrma</span>
-                  <span className="grey">2시간전</span>
+                  <span className="storyGrey">2시간전</span>
                 </div>
               </div>
               <div className="storyPerson">
@@ -148,7 +148,7 @@ const Main = () => {
                 />
                 <div className="storyName">
                   <span>dlwlrma</span>
-                  <span className="grey">2시간전</span>
+                  <span className="storyGrey">2시간전</span>
                 </div>
               </div>
             </div>

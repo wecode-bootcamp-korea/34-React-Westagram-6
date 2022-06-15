@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './login.scss';
 import { useNavigate } from 'react-router-dom';
+import './login.scss';
 
 const Login = () => {
   const [password, setPw] = useState('');
@@ -26,28 +26,24 @@ const Login = () => {
       });
   };
 
-  // onSubmit={event => {
-  //   event.preventDefault();
-  //   goToMain();
-  // }}
-
-  // const [disabled, setDisabled] = useState('');
-
   const navigate = useNavigate();
-
-  const valid = id.includes('@') && password.length > 4;
 
   const goToMain = () => {
     navigate('/Main-heeyun');
   };
 
-  // const handleIdInput = e => {
-  //   setId(e.target.value);
-  // };
+  const valid = id.includes('@') && password.length > 4;
 
-  // const handlePwInput = e => {
-  //   setPw(e.target.value);
-  // };
+  // 비구조화할당적용
+  const handleIdInput = e => {
+    const { value } = e.target;
+    setId(value);
+  };
+
+  const handlePwInput = e => {
+    const { value } = e.target;
+    setPw(value);
+  };
 
   return (
     <div className="loginWrapper">
@@ -60,20 +56,21 @@ const Login = () => {
                 className="idInput"
                 type="text"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
-                onChange={e => setId(e.target.value)}
+                onChange={handleIdInput}
+                // 비구조화 할당 미적용
+                // onChange={e => setId(e.target.value)}
               />
               <input
                 className="idInput"
                 type="text"
                 placeholder="비밀번호"
-                onChange={e => setPw(e.target.value)}
+                onChange={handlePwInput}
+                // onChange={e => setPw(e.target.value)}
               />
             </div>
             <button
               className={valid ? 'loginAbled' : 'loginDisabled'}
               onClick={server}
-
-              // disabled={disabled}
             >
               로그인
             </button>
@@ -88,33 +85,3 @@ const Login = () => {
 };
 
 export default Login;
-
-// <form className="inputbox">
-//             <input
-//               className="idInput"
-//               type="text"
-//               placeholder="전화번호, 사용자 이름 또는 이메일"
-//               onChange={e => setId(e.target.value)}
-//             />
-//             <input
-//               className="idInput"
-//               type="text"
-//               placeholder="비밀번호"
-//               onChange={e => setPw(e.target.value)}
-//             />
-//
-//
-//             <button
-//               className="loginbtn"
-//               disabled={disabled}
-//               onClick={() => {
-//                 if (setId.includes('@') >= 0 && setPw.length > 4) {
-//                   setDisabled(true);
-//                 } else {
-//                   setDisabled('false');
-//                 }
-//               }}
-//             >
-//               로그인
-//             </button>
-//          </form>
