@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './login.scss';
 
 const Login = () => {
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
+
   const isValid = id.includes('@') && pw.length >= 5;
 
   const handleIdInput = e => {
@@ -17,14 +18,23 @@ const Login = () => {
 
   const navigate = useNavigate();
   const goToMain = () => {
-    navigate('/Main');
+    fetch('http://10.58.6.158:8000/users/signin', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: id,
+        password: pw,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => localStorage.setItem('test', result.access_token));
+    navigate('/Main-hyerim');
   };
 
   return (
     <>
-      <div id="login_box">
+      <div id="loginBox">
         <h1 className="logo">westagram</h1>
-        <form className="input_box">
+        <form className="inputBox">
           <input
             type="text"
             className="id"

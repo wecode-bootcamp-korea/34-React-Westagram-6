@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './main.scss';
 
 const Main = () => {
   const [textIn, setTextIn] = useState([]);
   const [commentBox, setCommentBox] = useState('');
-  // const [array, setArray] = useState([]);
 
   return (
     <div id="wrap">
@@ -235,7 +234,6 @@ const Main = () => {
             </p>
           </div>
           {/* {right_profile} */}
-
           <div className="right_story">
             <p className="title">
               스토리
@@ -295,7 +293,6 @@ const Main = () => {
             </ul>
           </div>
           {/* { right_story} */}
-
           <div className="right_recommend">
             <p className="title">
               회원님을 위한 추천
@@ -363,7 +360,10 @@ const Main = () => {
           <footer>
             <div className="main_footer">
               <ul className="footBox">
-                <li>
+                {FOOT_DATA.map((ele, idx) => {
+                  return <li key={idx}>{ele.text}</li>;
+                })}
+                {/* <li>
                   <a href="#">소개 .</a>
                 </li>
                 <li>
@@ -386,19 +386,30 @@ const Main = () => {
                 </li>
                 <li>
                   <a href="#">언어 .</a>
-                </li>
+                </li> */}
               </ul>
             </div>
-            {/* {main_footer} */}
-            <p className="foot_copy">&copy; 2022 INSTAGRAM FROM META</p>
-            <Link to="/">뒤로가기</Link>
           </footer>
+
+          <p className="foot_copy">&copy; 2022 INSTAGRAM FROM META</p>
+          <Link to="/Login-hyerim">뒤로가기</Link>
         </div>
         {/* main-right */}
       </section>
     </div>
   );
 };
+
+const FOOT_DATA = [
+  { id: 1, text: '소개 .' },
+  { id: 2, text: '도움말 .' },
+  { id: 3, text: '홍보 센터 .' },
+  { id: 4, text: 'API .' },
+  { id: 5, text: '채용 정보 .' },
+  { id: 6, text: '약관 .' },
+  { id: 7, text: '위치 .' },
+  { id: 8, text: '언어 .' },
+];
 
 const Comment = props => {
   // const { textIn } = props;
