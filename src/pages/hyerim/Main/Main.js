@@ -197,7 +197,6 @@ const Main = () => {
                   let copy = [...textIn];
                   copy.push(commentBox);
                   setTextIn(copy);
-                  console.log(textIn);
                   e.target.reset();
                 }}
               >
@@ -363,30 +362,6 @@ const Main = () => {
                 {FOOT_DATA.map((ele, idx) => {
                   return <li key={idx}>{ele.text}</li>;
                 })}
-                {/* <li>
-                  <a href="#">소개 .</a>
-                </li>
-                <li>
-                  <a href="#">도움말 .</a>
-                </li>
-                <li>
-                  <a href="#">홍보 센터 .</a>
-                </li>
-                <li>
-                  <a href="#">API .</a>
-                </li>
-                <li>
-                  <a href="#">채용 정보 .</a>
-                </li>
-                <li>
-                  <a href="#">약관 .</a>
-                </li>
-                <li>
-                  <a href="#">위치 .</a>
-                </li>
-                <li>
-                  <a href="#">언어 .</a>
-                </li> */}
               </ul>
             </div>
           </footer>
